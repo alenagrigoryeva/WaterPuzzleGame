@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.3s ease-in-out;
+}
+
+body {
+    color: #333;
+    font-family: system-ui;
+    background-color: #ffe9e9;
+}
+
+.btn:hover { cursor: pointer; }
+.btn:active { scale: 0.95; }
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.game_container {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    border: 2px solid #FA9372;
+}
+
+.menu_heading, .rules_heading {
+    margin-bottom: 50px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 900;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #FA9372;
+}
+.menu_list {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+}
+.menu_list .open_rules {
+    grid-column: span 2;
+}
+.menu_list .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    user-select: none;
+    padding: 30px 0px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    overflow: hidden;
+    color: #fff;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom right, #EF709B, #FA9372);
+}
+.menu_list .item:hover {
+    background-image: linear-gradient(to bottom right, #FF3C7D, #FF5117);
+}
+
+.game, .rules {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px;
+}
+.game.active, .rules.active { display: block; }
+.game.opacity, .rules.opacity { opacity: 1; }
+
+.game_option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.game_option .btn, .btn_rules .btn {
+    padding: 10px 35px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #FA9372;
+    border: 2px solid #FA9372;
+}
+
+.moves {
+    color: #333;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.lvl_name {
+    margin-top: 30px;
+    scale: 1.1;
+    background-image: linear-gradient(to bottom right, #EF709B, #FA9372);
+    font-size: 20px;
+    padding: 15px 30px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.tube_items {
+    position: relative;
+    margin-top: 30px;
+}
+.tube {
+    position: absolute;
+    height: 130px;
+    width: 45px;
+    border: 2px solid #dcdcdc;
+    border-radius: 2px 2px 20px 20px;
+    background-position: 0 10px;
+    overflow: hidden;
+    transition: 1s linear;
+    transform: rotate(0deg);
+    cursor: pointer;
+    scale: 0.9;
+    box-shadow: 0 0 2px #fff;
+}
+
+.color {
+    position: absolute;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    scale: 1.02;
+    pointer-events: none;
+}
+.colorful, .tube_bg {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    z-index: 10;
+    transition: 1s;
+}
+.tube_bg { background-color: #fff; }
+
+.won {
+    font-size: 35px;
+    color: #FA9372;
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rules_text {
+    font-size: 20px;
+    line-height: 30px;
+}
+.btn_rules {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1em;
+}
